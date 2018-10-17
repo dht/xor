@@ -1,0 +1,14 @@
+.Binary-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .Binary-container .bit {
+    margin: 3px;
+    background-color: #333;
+    border: 1px solid #333;
+    width: 5px;
+    height: 5px;
+    border-radius: 5px; }
+    .Binary-container .bit.empty {
+      background-color: white; }

@@ -1,0 +1,16 @@
+.Column-container {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid gray; }
+  .Column-container .header {
+    font-weight: bold; }
+  .Column-container:first-child {
+    font-weight: bold; }
+  .Column-container > div {
+    padding: 2px 5px;
+    border: 1px solid gray;
+    border-bottom: none;
+    border-right: none;
+    font-size: 16px; }
+  .Column-container:last-child > div {
+    border-right: 1px solid gray; }

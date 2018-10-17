@@ -1,0 +1,28 @@
+.Column-container {
+    display: flex;
+    flex-direction: column;
+    border-bottom:1px solid gray;
+
+    .header {
+        font-weight: bold;
+    }
+
+    &:first-child {
+        font-weight: bold;
+    }
+
+    >div {
+        padding:2px 5px;
+        border:1px solid gray;
+        border-bottom:none;
+        border-right:none;
+        font-size:16px;
+    }
+
+    &:last-child {
+        >div {
+            border-right:1px solid gray;
+        } 
+    }
+}
+  
