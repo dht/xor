@@ -32,7 +32,8 @@ export class Binary<props> extends Component {
 }
 
 Binary.contextTypes = {
-    isBit: PropTypes.object
+    isBit: PropTypes.object,
+    isColorful: PropTypes.boolean
 };
 
 export default Binary;

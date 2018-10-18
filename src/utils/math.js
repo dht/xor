@@ -61,6 +61,7 @@ export const _if = (p, q) => {
     return dec;
 };
 
+// xnor
 export const _ifonly = (p, q) => {
     const p_bit = dec2bit(p);
     const q_bit = dec2bit(q);
@@ -68,6 +69,62 @@ export const _ifonly = (p, q) => {
 
     for (let cnt = 0; cnt < p_bit.length; cnt++) {
         output[cnt] = p_bit[cnt] == q_bit[cnt];
+    }
+
+    const dec = bit2dec(output);
+
+    return dec;
+};
+
+export const xor = (p, q) => {
+    const p_bit = dec2bit(p);
+    const q_bit = dec2bit(q);
+    let output = [];
+
+    for (let cnt = 0; cnt < p_bit.length; cnt++) {
+        output[cnt] = p_bit[cnt] != q_bit[cnt];
+    }
+
+    const dec = bit2dec(output);
+
+    return dec;
+};
+
+export const nand = (p, q) => {
+    const p_bit = dec2bit(p);
+    const q_bit = dec2bit(q);
+    let output = [];
+
+    for (let cnt = 0; cnt < p_bit.length; cnt++) {
+        output[cnt] = !p_bit[cnt] || !q_bit[cnt];
+    }
+
+    const dec = bit2dec(output);
+
+    return dec;
+};
+
+export const nor = (p, q) => {
+    const p_bit = dec2bit(p);
+    const q_bit = dec2bit(q);
+    let output = [];
+
+    for (let cnt = 0; cnt < p_bit.length; cnt++) {
+        output[cnt] = !p_bit[cnt] && !q_bit[cnt];
+    }
+
+    const dec = bit2dec(output);
+
+    return dec;
+};
+
+export const eight = (p, q) => {
+    const p_bit = dec2bit(p);
+    const q_bit = dec2bit(q);
+    let output = [];
+
+    for (let cnt = 0; cnt < p_bit.length; cnt++) {
+        output[cnt] = p_bit[cnt] || !q_bit[cnt];
     }
 
     const dec = bit2dec(output);
@@ -89,6 +146,14 @@ const parse = (p, q, method) => {
             return _if(p, q);
         case "ifonly":
             return _ifonly(p, q);
+        case "xor":
+            return xor(p, q);
+        case "nand":
+            return nand(p, q);
+        case "nor":
+            return nor(p, q);
+        case "eight":
+            return eight(p, q);
         default:
             return "-";
     }

@@ -8,7 +8,9 @@ import PropTypes from "prop-types";
 class App extends Component {
     getChildContext = () => {
         return {
-            isBit: false
+            isBit: false,
+            isColorful: true,
+            colorfulHeaders: true
         };
     };
 
@@ -25,10 +27,22 @@ class App extends Component {
 
         return (
             <div className="App">
-                <TableMap method={"and"} show={this.show} />
-                <TableMap method={"or"} show={this.show} />
-                <TableMap method={"if"} show={this.show} />
-                <TableMap method={"ifonly"} show={this.show} />
+                <div>
+                    <TableMap method={"and"} show={this.show} />
+                    <TableMap method={"or"} show={this.show} />
+                </div>
+                <div>
+                    <TableMap method={"if"} show={this.show} />
+                    <TableMap method={"ifonly"} show={this.show} />
+                </div>
+                <div>
+                    <TableMap method={"xor"} show={this.show} />
+                    <TableMap method={"nand"} show={this.show} />
+                </div>
+                <div>
+                    <TableMap method={"nor"} show={this.show} />
+                    <TableMap method={"eight"} show={this.show} />
+                </div>
                 <Preview data={current} />
             </div>
         );
@@ -36,7 +50,9 @@ class App extends Component {
 }
 
 App.childContextTypes = {
-    isBit: PropTypes.boolean
+    isBit: PropTypes.boolean,
+    isColorful: PropTypes.boolean,
+    colorfulHeaders: PropTypes.boolean
 };
 
 export default App;

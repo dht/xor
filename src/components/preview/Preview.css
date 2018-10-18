@@ -5,7 +5,11 @@
   border: 1px solid gray;
   width: 80px;
   padding: 10px;
-  border-radius: 4px; }
+  border-radius: 4px;
+  background-color: white; }
+  @media print {
+    .Preview-container {
+      display: none; } }
   .Preview-container .dec {
     font-size: 14px;
     color: gray;

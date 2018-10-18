@@ -6,6 +6,11 @@
     width:80px;
     padding:10px;
     border-radius: 4px;
+    background-color:white;
+
+    @media print {
+        display: none;
+    }
 
     .header {
     }
