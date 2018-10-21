@@ -118,13 +118,13 @@ export const nor = (p, q) => {
     return dec;
 };
 
-export const eight = (p, q) => {
+export const nif = (p, q) => {
     const p_bit = dec2bit(p);
     const q_bit = dec2bit(q);
     let output = [];
 
     for (let cnt = 0; cnt < p_bit.length; cnt++) {
-        output[cnt] = p_bit[cnt] || !q_bit[cnt];
+        output[cnt] = p_bit[cnt] && !q_bit[cnt];
     }
 
     const dec = bit2dec(output);
@@ -152,8 +152,8 @@ const parse = (p, q, method) => {
             return nand(p, q);
         case "nor":
             return nor(p, q);
-        case "eight":
-            return eight(p, q);
+        case "nif":
+            return nif(p, q);
         default:
             return "-";
     }

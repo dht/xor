@@ -29,19 +29,19 @@ class App extends Component {
             <div className="App">
                 <div>
                     <TableMap method={"and"} show={this.show} />
-                    <TableMap method={"or"} show={this.show} />
-                </div>
-                <div>
-                    <TableMap method={"if"} show={this.show} />
-                    <TableMap method={"ifonly"} show={this.show} />
-                </div>
-                <div>
-                    <TableMap method={"xor"} show={this.show} />
                     <TableMap method={"nand"} show={this.show} />
                 </div>
                 <div>
+                    <TableMap method={"if"} show={this.show} />
+                    <TableMap method={"nif"} show={this.show} />
+                </div>
+                <div>
+                    <TableMap method={"ifonly"} show={this.show} />
+                    <TableMap method={"xor"} show={this.show} />
+                </div>
+                <div>
+                    <TableMap method={"or"} show={this.show} />
                     <TableMap method={"nor"} show={this.show} />
-                    <TableMap method={"eight"} show={this.show} />
                 </div>
                 <Preview data={current} />
             </div>
